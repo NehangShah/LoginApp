@@ -1,0 +1,159 @@
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-lg-1">&nbsp;</div>
+        <div class="col-lg-10">
+            <div class="card">
+                <h4 class="card-header">Register</h4>
+                <div class="card-body">
+                    <form
+                        [formGroup]="form"
+                        (ngSubmit)="onSubmit()"
+                    >
+
+                        <div class="form-row">
+                            <div class="form-group col-lg-4">
+                                <label for="UserName">User Name</label>
+                                <input
+                                    type="text"
+                                    maxlength="30"
+                                    id="UName"
+                                    formControlName="UserName"
+                                    placeholder="User Name"
+                                    class="form-control"
+                                    (blur)="OnBlur('U')" autocomplete="off"
+                                    [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }"
+                                >
+                                <div
+                                    *ngIf="submitted && f.UserName.errors"
+                                    class="invalid-feedback"
+                                >
+                                    <div *ngIf="f.UserName.errors.required">User Name is required</div>
+                                    <div *ngIf="f.UserName.errors.maxLength">User Name can maximum of 15 characters</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="FirstName">First Name</label>
+                                <input
+                                    type="text"
+                                    placeholder="First Name"
+                                    formControlName="FirstName"
+                                    class="form-control"
+                                    maxlength="30" autocomplete="off"
+                                    [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }"
+                                >
+                                <div
+                                    *ngIf="submitted && f.FirstName.errors"
+                                    class="invalid-feedback"
+                                >
+                                    <div *ngIf="f.FirstName.errors.required">First Name is required</div>
+                                    <div *ngIf="f.FirstName.errors.maxLength">First Name can maximum of 30 characters</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-lg-4">
+                                <label for="LastName">Last Name</label>
+                                <input
+                                    type="text"
+                                    formControlName="LastName"
+                                    placeholder="Last Name"
+                                    maxlength="30"
+                                    class="form-control" autocomplete="off"
+                                    [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }"
+                                >
+                                <div
+                                    *ngIf="submitted && f.LastName.errors"
+                                    class="invalid-feedback"
+                                >
+                                    <div *ngIf="f.LastName.errors.required">Last Name is required</div>
+                                    <div *ngIf="f.LastName.errors.maxLength">Last Name can maximum of 30 characters</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+
+                            <div class="form-group col-lg-4">
+                                <label for="Email">Email</label>
+                                <input
+                                    type="text"
+                                    (blur)="OnBlur('E')"
+                                    formControlName="Email"
+                                    id="Email"
+                                    placeholder="Email" autocomplete="off"
+                                    class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.Email.errors }"
+                                >
+                                <div
+                                    *ngIf="submitted && f.Email.errors"
+                                    class="invalid-feedback"
+                                >
+                                    <div *ngIf="f.Email.errors.required">Email is required</div>
+                                    <div *ngIf="f.Email.errors.email">Email must be a valid Email address</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="Password">Password</label>
+                                <input
+                                    type="Password"
+                                    placeholder="Password"
+                                    formControlName="Password" autocomplete="off"
+                                    class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.Password.errors }"
+                                >
+                                <div
+                                    *ngIf="submitted && f.Password.errors"
+                                    class="invalid-feedback"
+                                >
+                                    <div *ngIf="f.Password.errors.required">Password is required</div>
+                                    <div *ngIf="f.Password.errors.minlength">Password must be at least 6 characters</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="CPassword">Confirm Password</label>
+                                <input
+                                    type="Password"
+                                    placeholder="Confirm Password"
+                                    formControlName="CPassword" autocomplete="off"
+                                    class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.CPassword.errors }"
+                                >
+                                <div
+                                    *ngIf="submitted && f.CPassword.errors"
+                                    class="invalid-feedback"
+                                >
+                                    <div *ngIf="f.CPassword.errors.required">Confirm Password is required</div>
+                                    <div *ngIf="f.CPassword.errors.minlength">
+                                        Confirm Password must be at least 6 characters
+                                    </div>
+                                    <div *ngIf="f.CPassword.errors.mustMatch">Passwords must match</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button
+                                [disabled]="loading"
+                                class="btn btn-primary"
+                            >
+                                <span
+                                    *ngIf="loading"
+                                    class="spinner-border spinner-border-sm mr-1"
+                                ></span>
+                                Register
+                            </button>
+                            <a
+                                routerLink="../login"
+                                class="btn btn-link"
+                            >
+                                Back to Login
+                            </a>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-1">&nbsp;</div>
+    </div>
+</div>

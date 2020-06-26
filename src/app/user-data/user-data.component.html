@@ -1,0 +1,115 @@
+
+<style>
+  thead>tr>th {
+  cursor: pointer;
+}
+  .footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     /* background-color: transparent; */
+     /* color: black; */
+     text-align: center;
+  }
+  .header {
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     /* background-color: transparent; */
+     /* color: black; */
+     text-align: center;
+  }
+  </style>
+
+<div class="header">
+    <app-header></app-header>
+</div>
+<!-- <header>
+    <nav class="navbar navbar-default">
+        <a
+            class="navbar-brand"
+            href="#"
+        >
+            User List
+        </a>
+    </nav>
+</header> -->
+
+<div class="container">
+    <div class="row" style="padding-top: 70px;">
+        <div class="navbar">
+            <input
+                class="form-control"
+                type="text"
+                name="search"
+                [(ngModel)]="filter"
+            >
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">
+                        Sr.
+                        <br>
+                        ({{EmployeeData?.length}})
+                    </th>
+                    <th (click)="sort('FirstName')">
+                        Name&nbsp;
+                        <span
+                            class="glyphicon sort-icon"
+                            *ngIf="key =='FirstName'"
+                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                        ></span>
+                    </th>
+                    <!-- <th (click)="sort('MiddleName')">
+                        &nbsp;
+                        <span
+                            class="glyphicon sort-icon"
+                            *ngIf="key =='MiddleName'"
+                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                        ></span>
+                    </th> -->
+                    <th (click)="sort('LastName')">
+                        Surname&nbsp;
+                        <span
+                            class="glyphicon sort-icon"
+                            *ngIf="key =='LastName'"
+                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                        ></span>
+                    </th>
+
+                    <th (click)="sort('Email')">
+                        Email&nbsp;
+                        <span
+                            class="glyphicon sort-icon"
+                            *ngIf="key =='Email'"
+                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                        ></span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of EmployeeData | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{emp.FirstName}}</td>
+                    <td>{{emp.LastName}}</td>
+
+                    <td>{{emp.Email}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+</div>
+<div class="footer">
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,32 @@
+<!-- <nav class="navbar navbar-light bg-primary justify-content-between">
+  <a class="navbar-brand" style="color: white;cursor: pointer;">User</a>
+  <a class="navbar-brand pull-right" style="color: white;font-weight: bold;cursor: pointer;">Logout</a>
+
+</nav> -->
+
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a
+            class="nav-item nav-link"
+            routerLink="/home"
+        >
+            Home
+        </a>
+        <a
+            class="nav-item nav-link"
+            routerLink="/userdata"
+        >
+            Users
+        </a>
+        <div class=" pull-right">
+            <a
+                class="nav-item nav-link"
+                style="cursor: pointer;"
+                (click)="logout()"
+            >
+                Logout
+            </a>
+        </div>
+
+    </div>
+</nav>

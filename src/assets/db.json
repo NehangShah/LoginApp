@@ -1,0 +1,31 @@
+{
+  "Employee": [
+    {
+      "id": 1,
+      "FirstName": "nehang",
+      "UserName": "nehang",
+      "LastName": "Shah",
+      "Email": "nehangshah@email.com",
+      "Password": "admin@123"
+    },
+    {
+      "FirstName": "alay",
+      "UserName": "alay",
+      "LastName": "shah",
+      "Email": "alay@email.com",
+      "Password": "admin@123",
+      "token": "faketoken",
+      "id": 2
+    },
+    {
+      "FirstName": "naivam",
+      "UserName": "naivam",
+      "LastName": "shah",
+      "Email": "abc@example.com",
+      "Password": "admin@123",
+      "token": "faketoken",
+      "id": 3
+    }
+
+  ]
+}

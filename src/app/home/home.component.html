@@ -1,0 +1,87 @@
+<style>
+  .footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     /* background-color: transparent; */
+     /* color: black; */
+     text-align: center;
+  }
+  .header {
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     /* background-color: transparent; */
+     /* color: black; */
+     text-align: center;
+  }
+  </style>
+
+<div class="header">
+    <app-header></app-header>
+</div>
+
+<div
+    class="row"
+    style="padding-top: 70px;"
+>
+
+    <div class="col-lg-3">
+        <!-- <img
+            [src]="EmployeeRow.Profile"
+            alt
+        > -->
+        &nbsp;
+    </div>
+    <div class="col-lg-6">
+        <!-- <div
+            class="card"
+            style="width: 18rem;"
+        >
+            <img
+                [src]="EmployeeRow.Profile"
+                class="card-img-top"
+                alt="..."
+            >
+            <div class="card-body">
+                <h5 class="card-title">
+                    {{EmployeeRow.FirstName}}&nbsp;{{EmployeeRow.LastName}}
+                </h5>
+
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Email :</b>&nbsp;{{EmployeeRow.Email}}</li>
+                <li class="list-group-item"><b>Contact :</b>&nbsp;{{EmployeeRow.Mobile}}</li>
+                <li class="list-group-item"><b>Address :</b>&nbsp;{{EmployeeRow.Address}}</li>
+                <li class="list-group-item"><b>Birth Date :</b>&nbsp;{{EmployeeRow.BirtDate}}</li>
+            </ul>
+
+        </div> -->
+
+        <!-- New Card Start -->
+
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="../../assets/download.png" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{EmployeeRow?.FirstName.toUpperCase()}}&nbsp;{{EmployeeRow?.LastName.toUpperCase()}}</h5>
+                <p class="card-text"><b>Email :</b>&nbsp;{{EmployeeRow.Email}}</p>
+
+                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- New Card Ends -->
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>
+
+<div class="footer">
+    <app-footer></app-footer>
+</div>
